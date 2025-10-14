@@ -25,7 +25,7 @@
         </nav>
     </header>
     <script>
-let myText = "hello, world!"
+/*let myText = "hello, world!"
 alert(myText);
     function showDistance(speed, time) {
         alert(speed * time);
@@ -41,6 +41,38 @@ alert(myText);
         let distance = speed * time;
         return distance;
     }
+*/ 
+    let foo = "I really";
+    let blah = "why anybody would";
+    let blarg = "do this";
+
+    let result = foo.concat(" don't know", " ", blah, " ", blarg);
+
+    console.log(result);
+
+    let inspoQuote = "That which you can concatenate, you can also split apart.";
+
+    let splitWords= inspoQuote.split(" ");
+
+    console.log(splitWords.length);
+
+   
+   
+   /* function sayGreeting(greeting, who, emoji){
+        let message= greeting + ", " + who + "! How are you? " + emoji;
+       
+        return message;
+    } 
+    let batman= sayGreeting("Good morning", "Batman", "🦇" );
+    console.log(batman); */
+
+    function sayGreeting(greeting, who, emoji){
+        let message = `${greeting}, ${who}! How are you? ${emoji}`;
+        return message;
+    }
+
+    let panda = sayGreeting("Hello hello, hello", "Police Officer Panda", "🐼");
+    console.log(panda);
     </script>
     
 </body>
