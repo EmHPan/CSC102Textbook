@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <h1>CSC102 Practice</h1>
         <nav>
             <a href="hello_world.html">Hello World</a>
             <br>
@@ -88,6 +89,40 @@ clearInterval(intervalID);
 
 //Chap 8
 //No practice
+
+
+//Chap 9
+//Closures
+function youSayGoodBye(){
+    alert("Good Bye!");
+    function andISayHello(){
+        alert("Hello!");
+    }
+    return andISayHello;
+}
+
+let chap9 = youSayGoodBye();
+//called andISayHello function because it is the inner function
+chap9();
+
+function stopWatch(){
+    let startTime = Date.now();
+
+    function getDelay(){
+        let elapsaedTime = Date.now() - startTime;
+        alert(elapsaedTime);
+    }
+    return getDelay;
+}
+
+let timer = stopWatch();
+
+//do something that takes time
+for (let i=0; i<1000000; i++) {
+    let foo = Math.random() * 10000;
+}
+//invoke function
+timer();
     </script>
     
 </body>
