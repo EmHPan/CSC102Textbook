@@ -49,13 +49,13 @@ alert(myText);
 
     let result = foo.concat(" don't know", " ", blah, " ", blarg);
 
-    console.log(result);
+ //   console.log(result);
 
     let inspoQuote = "That which you can concatenate, you can also split apart.";
 
     let splitWords= inspoQuote.split(" ");
 
-    console.log(splitWords.length);
+ //   console.log(splitWords.length);
 
    
    
@@ -73,7 +73,7 @@ alert(myText);
     }
 
     let panda = sayGreeting("Hello hello, hello", "Police Officer Panda", "🐼");
-    console.log(panda);
+  //  console.log(panda);
 //Chap 7 practice
     let thingToPrint = "";
 
@@ -128,6 +128,104 @@ timer();
     no code notes
  Chapter 16 
      no code notes*/
+
+/* Chapter 19 notes */
+//Ogject made
+let funnyGuy = {};
+
+//add value to obj w/ dot notation
+funnyGuy.firstName = "Conan";
+
+let funnyFirstName = funnyGuy.firstName;
+
+//can also use bracket notation
+funnyGuy["lastName"] = "O'Brien";
+
+//brackets good for generated values
+/*let myObject = {};
+
+for (let i = 0; i<5; i++){
+    let propertyName = "data" + i;
+
+    myObject[propertyName] = Math.random()*100;
+}*/
+ 
+//can also define things in object making, if we know the values then
+let colors = {
+    header: "blue",
+    footer: "gray",
+    content: {
+        title: "black",
+        body: "darkgray",
+        signature: "light blue",
+    }
+}
+//dot and bracket notations can be combined
+colors.content["frame"] = "yellow";
+
+// remove value with dor or bracket notation
+delete colors.footer;
+
+// faster processing time to use "undefined"
+    // colors.footer = undefined;
+// footer now still exists in memory
+
+/* Chapter 20 notes */ 
+
+class Planet {
+constructor(name, radius){
+    this.name = name;
+    this.radius = radius;
+}
+
+getSurfaceArea(){
+    let surfaceArea = 4 * Math.PI * Math.pow(this.radius, 2);
+  //  console.log(surfaceArea + " square km!");
+return surfaceArea;
+}
+
+set gravity(value){
+    console.log("Setting value!");
+    this._gravity = value;
+}
+
+get gravity(){
+    console.log("Getting Value!");
+   // return this._gravity;
+}
+
+}
+
+let myPlanet = new Planet("Earth", 6378);
+//console.log(myPlanet.name);
+
+myPlanet.gravity = 9.81
+
+myPlanet.getSurfaceArea();
+
+//console.log(myPlanet.gravity)
+
+
+class potatoPlanet extends Planet{
+    constructor(name, radius, potatoType){
+        super(name, radius);
+
+        this.potatoType = potatoType;
+    }
+
+    getPotatoType(){
+        let thePotato = this.potatoType.toUpperCase() = "!!1!!!";
+        console.log(thePotato);
+        return thePotato;
+    }
+}
+
+//spudnik has access to potatoPlanet and Planet code
+let spudnik = new potatoPlanet("Spudnik", 12411, "Russet");
+
+spudnik.gravity = 42.1;
+
+//spudnik.getPotatoType();
 
     </script>
     
