@@ -93,7 +93,7 @@ clearInterval(intervalID);
 
 //Chap 9
 //Closures
-function youSayGoodBye(){
+/*function youSayGoodBye(){
     alert("Good Bye!");
     function andISayHello(){
         alert("Hello!");
@@ -101,9 +101,9 @@ function youSayGoodBye(){
     return andISayHello;
 }
 
-let chap9 = youSayGoodBye();
+let chap9 = youSayGoodBye();*/ 
 //called andISayHello function because it is the inner function
-chap9();
+//chap9();
 
 function stopWatch(){
     let startTime = Date.now();
@@ -227,6 +227,72 @@ spudnik.gravity = 42.1;
 
 //spudnik.getPotatoType();
 
+
+//Chapter 13
+
+//literal notation for array
+let groceries = ["Milk", "Eggs", "Frosted Flakes", "Salami", "Juice"];
+
+groceries[1]; //eggs
+
+for (let i=0; i<groceries.length; i++){
+    let item=groceries[i];
+};
+
+//add item to end of array
+groceries.push("Cookies"); //added "Cookies"
+
+//add item to beginnning of array
+groceries.unshift("Bananas")
+
+//adds "Brownies" to end of groceries array
+console.log(groceries.push("Brownies")); //returns index number
+
+//removes last item from array
+let lastItem = groceries.pop();
+
+//removes first item from array
+let firstItem = groceries.shift();
+
+let good = ["Mario", "Luigi", "Kirby", "Yoshi"];
+
+let bad = ["Bowser", "Koop Troopa", "Goomba"];
+
+//combine 2 arrays
+//good.concat(bad) --> good listed before bad
+let goodAndBad = good.concat(bad);
+
+//console.log(goodAndBad);
+
+
+//map cahnges all items in array and makes new array
+//define function before putting in map
+//becomes callback function
+function short(item) {
+    let down = item.charAt(0).toLowerCase();
+    return down + item.slice(1);
+}
+let lowerCase = goodAndBad.map(short);
+
+//console.log(lowerCase);
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+//took out part of array and made smaller array
+let evenNumbers = numbers.filter(function(item){
+    return (item % 2 == 0);
+});
+
+console.log(evenNumbers);
+
+//array to 1 value
+//callback function is 1st value
+//initial value is 2nd
+let total = numbers.reduce(function(total, current){
+    return total+current;
+}, 0);
+
+console.log(total);
     </script>
     
 </body>
